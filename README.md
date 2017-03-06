@@ -1,2 +1,2 @@
-# splashllc
-Freelance project - details updated soon
+# reactFrames
+Frame work for React Apps
