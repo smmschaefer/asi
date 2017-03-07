@@ -1,7 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
-
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -30,7 +29,7 @@ module.exports = {
 	  },
 		{
 		      test: /\.scss$/,
-		      loader: 'style!css!sass'
+		      loader: 'style-loader!css-loader!sass-loader'
 		    }]
   }
 };

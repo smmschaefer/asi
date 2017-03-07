@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
-import Routes from '../config/Routes';
+import sass from '../scss/application.scss'
+import Routes from '../config/Routes'
 import NavBar from './NavBar'
+import Footer from './Footer'
 
 
 class Main extends Component {
 	render() {
 		return (
-			<div>	
-				<div>
-					<NavBar history={this.props.history}/>
+			<div className="container">	
+				<div className="navBar">
+					<NavBar history={this.props.history}/>	
 				</div>
 				<div>
 					{this.props.children}
+				</div>
+				<div>
+					<Footer />
 				</div>
 			</div>
 		)

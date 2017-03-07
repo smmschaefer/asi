@@ -7,6 +7,7 @@ class Contact extends Component {
 		this.state = {
 			formValues: {
 				name: '',
+				subject: '',
 				message: ''
 			}
 		}
@@ -30,10 +31,11 @@ class Contact extends Component {
 		
 		//create and send email
 		let sendName = this.state.formValues.name;
+		let sendSbj = this.state.formValues.subject;
 		let sendMsg = this.state.formValues.message;
 		//window.open(`mailto:smmschaefer@gmail.com?subject=${sendName}&body=${sendMsg}`);
 		// + "?cc=myCCaddress@example.com"
-		let link = `mailto:smmschaefer@gmail.com?subject=${sendName}&body=${sendMsg}`;
+		let link = `mailto:smmschaefer@gmail.com?subject=${sendSbj}&body=${sendMsg}%0D%0A%0D%0A- ${sendName}`;
 	    window.location.href = link;
 	}
 	
@@ -42,7 +44,12 @@ class Contact extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit.bind(this)}>
 					<label>Name:
-						<input type="text" name="name" placeholder="Name" value={this.state.formValues["name"]} onChange={this.handleChange.bind(this)} />
+						<input type="text" name="name" placeholder="Your Name" value={this.state.formValues["name"]} 
+						onChange={this.handleChange.bind(this)} />
+					</label> <br />
+					<label>Subject: 
+						<input type="text" name="subject" placeholder="Subject" value={this.state.formValues["subject"]} 
+						onChange={this.handleChange.bind(this)} /> 
 					</label> <br />
 					Message: <br />
 						<textarea type="text" name="message" placeholder="Message..." value={this.state.formValues["message"]} onChange={this.handleChange.bind(this)}></textarea> <br />
@@ -52,7 +59,6 @@ class Contact extends Component {
 		)
 	}
 }
-
 
 
 export default Contact;
