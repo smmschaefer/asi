@@ -9,7 +9,7 @@ import Contact from '../components/Contact'
 class Routes extends Component {
 	render() {
 		return (
-			<Router history={browserHistory}>
+			<Router history={hashHistory}>
 				<Route path="/" component={Main}>
 					<Route path="About" component={About}></Route>
 					<Route path="Contact" component={Contact}></Route>
