@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Home from './components/Home'
+import Routes from './config/Routes'
 
-
-ReactDOM.render(<Home />, document.getElementById('app'));
+ReactDOM.render(<Routes />, document.getElementById('app'));
