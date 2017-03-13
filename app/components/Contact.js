@@ -1,5 +1,31 @@
 import React, { Component, PropTypes } from 'react'
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
+
+const style = {
+ 	marginLeft: 20,
+};
+
+const ContactForms = () => (
+  <Paper zDepth={2}>
+    <TextField style={style} floatingLabelText="Name" />
+    <Divider />
+    <TextField style={style} floatingLabelText="Subject"/>
+    <Divider />
+    <TextField  style={style} floatingLabelText="Message"/>
+    <Divider />
+  </Paper>
+);
+
+const SubmitButton = () => (
+  <div>
+    <RaisedButton label="SUBMIT" primary={true} fullWidth={true} />
+    <br />
+  </div>
+);
 
 class Contact extends Component {
 	constructor(props) {
@@ -42,6 +68,19 @@ class Contact extends Component {
 	render() {
 		return (
 			<div>
+				<ContactForms />
+				<SubmitButton />
+			</div>
+		)
+	}
+}
+
+
+export default Contact;
+
+
+/*
+
 				<form onSubmit={this.handleSubmit.bind(this)}>
 					<label>Name:
 						<input type="text" name="name" placeholder="Your Name" value={this.state.formValues["name"]} 
@@ -55,10 +94,5 @@ class Contact extends Component {
 						<textarea type="text" name="message" placeholder="Message..." value={this.state.formValues["message"]} onChange={this.handleChange.bind(this)}></textarea> <br />
 					<input type="submit" value="Submit" /> 
 				</form>
-			</div>
-		)
-	}
-}
 
-
-export default Contact;
+*/
