@@ -4,7 +4,9 @@ import sass from '../scss/application.scss'
 
 const TopNav = () => <div><TopLogo /><Links /></div>;
 
-const TopLogo = () => <div className="asiTop"><p className="asiTopAnimation">Advanced Surface Innovations</p></div>;
+const ScrollNav = () => <div><Links /></div>;
+
+const TopLogo = () => <div><p className="asiTopAnimation">Advanced Surface Innovations</p></div>;
 
 const Links = () => 
 	<nav>
@@ -14,6 +16,27 @@ const Links = () =>
 	</nav>
 
 class NavBar extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			nav: ''
+		}
+	}
+	
+	handleScroll(event) {
+	    console.log('handleScroll invoked');
+	}
+
+	componentDidMount() {
+	    console.log('componentDidMount invoked');
+	    window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+	    console.log('componentWillUnmount invoked');
+	    window.removeEventListener('scroll', this.handleScroll);
+	}
+	
 	render() {
 		return (
 			<div>

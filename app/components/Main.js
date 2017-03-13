@@ -9,9 +9,11 @@ class Main extends Component {
 	render() {
 		return (
 			<div className="container">	
+				<center>
 				<div className="navBar">
 					<NavBar history={this.props.history}/>	
 				</div>
+				</center>
 				<div>
 					{this.props.children}
 				</div>

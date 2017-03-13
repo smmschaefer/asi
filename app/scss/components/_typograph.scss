@@ -17,12 +17,76 @@ a {
 }
 */
 
+@keyframes fadeInOut {
+    0%  { opacity: 0; }
+	20%  { opacity: 0; }
+    25% { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeInOut {
+    0%  { opacity: 0; }
+	20%  { opacity: 0; }
+    25% { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeInOut {
+    0%  { opacity: 0; }
+	20%  { opacity: 0; }
+    25% { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeInOut {
+    0%  { opacity: 0; }
+	20%  { opacity: 0; }
+    25% { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeInOut {
+    0%  { opacity: 0; }
+	20%  { opacity: 0; }
+    25% { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeInRight {
+           0% {
+              opacity: 0;
+              -webkit-transform: translateX(20px);
+           }
+           100% {
+              opacity: 1;
+              -webkit-transform: translateX(0);
+           }
+        }
+        
+        @keyframes fadeInRight {
+           0% {
+              opacity: 0;
+              transform: translateX(20px);
+           }
+           100% {
+              opacity: 1;
+              transform: translateX(0);
+           }
+        }
 
 @-webkit-keyframes textDis {
     0%   { left:0px; bottom:0px; }
     100% { left:4px; bottom:4px; }
 }
-
 
 @keyframes textDis {
     0%   { left:0px; bottom:0px; }
@@ -87,11 +151,7 @@ a {
 .displaceText {
 	@include linkNav;
 	
-	&:hover {
-	    -webkit-animation: textDis .25s ease-in-out forwards;
-	    animation: textDis .25s ease-in-out forwards;
-			
-	}
+	
 }
 
 .disShadow {
@@ -107,10 +167,10 @@ a {
 		-ms-transition: 1s ease;
 		transition: 1s ease;
 	}
-	
 }
 
 .asiTopAnimation {
 	color: black;
-	font-size: 1.2em;
+	text-shadow:0px 1px #FFF; 
+	font-size: 2em;
 }
